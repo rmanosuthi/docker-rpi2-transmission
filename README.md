@@ -1,6 +1,10 @@
 # docker-rpi2-transmission
 Transmission BitTorrent Client for Raspberry Pi 2
 
+## Terminology
+
+- "RPC Interface" = Transmission's Web interface (your_ip:9091)
+
 ## How to use
 
 ```
@@ -18,6 +22,14 @@ Transmission BitTorrent Client for Raspberry Pi 2
 
   Example: ```RPI2_TRANSMISSION_VOLUMEBIND="/mnt:/var/lib/transmission/Downloads"```
 
-- AUTHENTICATION (not implemented)
+- AUTHENTICATION **(not implemented yet)**
 
   Whether authentication is required when connecting to the RPC interface.
+
+- AUTH_USER **(not implemented yet)**
+
+  User for logging in to the RPC interface.
+
+- AUTH_PASS **(not implemented yet)**
+
+  Password for logging in to the RPC interface.
