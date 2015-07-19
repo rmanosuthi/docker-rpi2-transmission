@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Startup options
+CONTAINER_NAME="transmission"
+
+# Configs
+
+RPI2_TRANSMISSION_ALLOWED_HOSTS="127.0.0.1,192.168.3.*"
+RPI2_TRANSMISSION_VOLUMEBIND="/mnt:/var/lib/transmission/Downloads"
+RPI2_TRANSMISSION_AUTHENTICATION="n"
+RPI2_TRANSMISSION_AUTH_USER="foo"
+RPI2_TRANSMISSION_AUTH_PASS="bar"
+
+docker run \
+--name "$CONTAINER_NAME" \
+-d \
+-p 9091:9091 \
+-p 51413:51413/tcp \
+-p 51413:51413/udp \
+--net host \
+-v "$RPI2_TRANSMISSION_VOLUMEBIND" \
+-e RPI2_TRANSMISSION_ALLOWED_HOSTS="$RPI2_TRANSMISSION_ALLOWED_HOSTS" \
+mpipo/rpi2-transmission
